@@ -1,7 +1,7 @@
 <?php
 // Your code hereafter...
 ?>
-  <div class="panel panel-primary">
+  <div class="panel panel-default">
     <div class="panel-heading">
       <h3 class="panel-title">Specific element for 1/2 display (right)</h3>
     </div>
@@ -10,7 +10,7 @@
 	</div>
   </div>
 
-  <div class="panel panel-primary">
+  <div class="panel panel-default">
     <div class="panel-heading">
       <h3 class="panel-title">Something else</h3>
     </div>

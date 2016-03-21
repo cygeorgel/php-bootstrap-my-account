@@ -1,20 +1,6 @@
 <?php
-/*
-Copyright 2015 Cyrille Georgel www.cyrille.me
 
-Licensed under the Apache License, Version 2.0 (the "License"); you may not
-use this file except in compliance with the License. You may obtain a copy of
-the License at
 
-http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
-WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
-License for the specific language governing permissions and limitations under
-the License.
-
-*/
 session_start();
 
 if(isset($_SESSION['lastActivity']) && (time() - $_SESSION['lastActivity'] > 1800)) // Logout after 30 min of inactivity
@@ -28,9 +14,6 @@ $_SESSION['lastActivity'] = time();
 include_once '_cgGlobal.php';
 
 include_once '_connexionDb.php';
-
-
-
 
 
 
@@ -57,12 +40,13 @@ if(!isset($_SESSION['userLogin']))
 		WHERE login = '$userLogin' AND active = '1'");
 				
 		if(count($auth) == 1)
-		{	
+		{				
+			
 			if(password_verify($userPassword, $auth['password']))
 			{
 				$qUpdate = sqlSimpleQuery("UPDATE users 
 					SET nbConnections = (nbConnections+1), lastConnection = (CURRENT_TIMESTAMP)
-				WHERE userID = '$userID'");
+				WHERE login = '$userLogin'");
 				
 				if(!$qUpdate)
 				{

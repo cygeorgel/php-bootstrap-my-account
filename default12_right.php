@@ -1,7 +1,7 @@
 <?php
 // Your code hereafter...
 ?>
-  <div class="panel panel-primary">
+  <div class="panel panel-default">
     <div class="panel-heading">
       <h3 class="panel-title">Default element for 1/2 display (right)</h3>
     </div>

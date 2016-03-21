@@ -24,7 +24,7 @@
   	{
   		print $errorLoginAlert;
 		
-		print $errorType;
+		// print $errorType;
   	}
 	
   	?>

@@ -2,7 +2,7 @@
 // Your code hereafter...
 ?>
 
-<div class="panel panel-primary">
+<div class="panel panel-default">
    <div class="panel-heading">
       <h3 class="panel-title">Default element for 1/1 display</h3>
     </div>
@@ -14,7 +14,7 @@
 	</div>
  </div>
 
-<div class="panel panel-primary">
+<div class="panel panel-default">
    <div class="panel-heading">
       <h3 class="panel-title">Something else...</h3>
     </div>
@@ -23,7 +23,7 @@
 	</div>
  </div>
  
- <div class="panel panel-primary">
+ <div class="panel panel-default">
     <div class="panel-heading">
        <h3 class="panel-title">Put a form here</h3>
      </div>
