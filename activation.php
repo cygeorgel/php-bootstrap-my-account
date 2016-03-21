@@ -11,22 +11,22 @@ include "_header.php";
 ?>
 
 <body id="page-top">
-  
+
 <div class="container theme-showcase" role="main">
-	
+
 <?php
-	
+
 
 include "_navbar-nologin.php";
 
 print "<div class=\"page-header\"></div>";
-	
-	
+
+
 $login = $_REQUEST['a'];
 $activationKey = $_REQUEST['k'];
 
 $user = sqlSingleResult("SELECT userID, firstName
-	FROM users 
+	FROM users
 WHERE login = '$login' AND activationKey = '$activationKey'");
 
 
@@ -35,18 +35,18 @@ if(count($user) > O)
 {
 	$userID = $user['userID'];
 	$firstName = $user['firstName'];
-	
-	$qUpdate = sqlSimpleQuery("UPDATE users 
-		SET active = '1', activationDate = CURRENT_TIMESTAMP 
+
+	$qUpdate = sqlSimpleQuery("UPDATE users
+		SET active = '1', activationDate = CURRENT_TIMESTAMP
 	WHERE userID = '$userID'");
-	
+
 	$feedBack = "<div class=\"alert alert-success\" role=\"alert\">
 	  <span class=\"glyphicon glyphicon-ok\" aria-hidden=\"true\"></span>
 	  <span class=\"sr-only\">Success:</span>
-	  Welldone $firstName, your just activated your account. 
+	  Welldone $firstName, your just activated your account.
 	  You can now connect from <a href=\"index.php\">the login page</a>.
 	</div>";
-	
+
 }
 else
 {
@@ -66,12 +66,6 @@ include "_footer.php";
 
 </div> <!-- /container -->
 
-<!-- Bootstrap core JavaScript
-================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script src="//getbootstrap.com/examples/theme/../../dist/js/bootstrap.min.js"></script>
-<script src="//getbootstrap.com/examples/theme/../../assets/js/docs.min.js"></script>
-<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-<script src="//getbootstrap.com/examples/theme/../../assets/js/ie10-viewport-bug-workaround.js"></script>
+<?php    include '_bootstrap_js.php';    ?>
+
 </body>

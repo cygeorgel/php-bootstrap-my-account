@@ -27,11 +27,11 @@ include "_header.php";
 ?>
 
 <body id="page-top">
-  
+
 <div class="container theme-showcase" role="main">
-	
+
 <?php
-	
+
 
 include "_navbar-nologin.php"; // if required...
 
@@ -54,13 +54,13 @@ include "_navbar-nologin.php"; // if required...
 			Or <strong><a href="signUp.php">create your account for free</a></strong>...</p>
 		<p><a class="btn btn-lg btn-special btn-block" href="signUp.php" role="button">Sign up</a>
 	  </div>
-	
+
   </div>
-  
+
   <div class="col-md-6">
-  	
-	<?php	
-	
+
+	<?php
+
 	if($_REQUEST['forgottenPassword'] == 1)
 	{
 		include 'forgottenPasswordBox.php';
@@ -68,16 +68,16 @@ include "_navbar-nologin.php"; // if required...
 	else
 	{
 		include 'loginBox.php';
-		
+
 		print "<p><strong><a href=\"?forgottenPassword=1\">
 			Forgotten password ?</a></strong></p>";
 	}
-	
+
 	?>
 
-	
+
   </div>
-  
+
 </div>
 
 
@@ -90,12 +90,6 @@ include "_footer.php";
 
 </div> <!-- /container -->
 
-<!-- Bootstrap core JavaScript
-================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script src="//getbootstrap.com/examples/theme/../../dist/js/bootstrap.min.js"></script>
-<script src="//getbootstrap.com/examples/theme/../../assets/js/docs.min.js"></script>
-<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-<script src="//getbootstrap.com/examples/theme/../../assets/js/ie10-viewport-bug-workaround.js"></script>
+<?php    include '_bootstrap_js.php';    ?>
+
 </body>
